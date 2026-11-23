@@ -70,14 +70,21 @@ export function Entreprise() {
 
                   <div>
                     <p className="text-[13px] text-muted">Missions réalisées</p>
-                    <ul className="mt-3 flex flex-col gap-3">
-                      {stage.missions.map((mission) => (
-                        <li key={mission} className="flex gap-3 text-[15.5px] leading-relaxed text-fg/90">
-                          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
-                          {mission}
-                        </li>
-                      ))}
-                    </ul>
+                    {stage.missions.length > 0 ? (
+                      <ul className="mt-3 flex flex-col gap-3">
+                        {stage.missions.map((mission) => (
+                          <li key={mission} className="flex gap-3 text-[15.5px] leading-relaxed text-fg/90">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
+                            {mission}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-3 text-[15.5px] leading-relaxed text-muted">
+                        Le détail des missions sera ajouté prochainement.
+                      </p>
+                    )}
+                    {stage.linked.length > 0 && (
                     <div className="mt-8 border-t border-line pt-4">
                       <p className="text-[13px] text-muted">Réalisations détaillées pendant ce stage</p>
                       <ul className="mt-3 flex flex-col gap-2">
@@ -98,6 +105,7 @@ export function Entreprise() {
                         })}
                       </ul>
                     </div>
+                    )}
                   </div>
                 </div>
               </article>

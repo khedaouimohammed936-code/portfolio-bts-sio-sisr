@@ -12,7 +12,7 @@ const sections = [
   {
     to: '/realisations',
     title: 'Réalisations professionnelles',
-    body: 'Six projets documentés : contexte, besoin, démarche, difficultés, résultats et compétences mobilisées.',
+    body: 'Les projets et travaux pratiques documentés pendant la formation : contexte, démarche et compétences mobilisées.',
   },
   {
     to: '/formation',
@@ -131,14 +131,25 @@ export function Home() {
                   </a>
                 </dd>
               </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-muted">LinkedIn</dt>
-                <dd className="text-right">
-                  <a href={site.linkedin} className="link-draw" target="_blank" rel="noreferrer">
-                    Profil
-                  </a>
-                </dd>
-              </div>
+              {site.linkedin ? (
+                <div className="flex justify-between gap-4">
+                  <dt className="text-muted">LinkedIn</dt>
+                  <dd className="text-right">
+                    <a href={site.linkedin} className="link-draw" target="_blank" rel="noreferrer">
+                      Profil
+                    </a>
+                  </dd>
+                </div>
+              ) : (
+                <div className="flex justify-between gap-4">
+                  <dt className="text-muted">GitHub</dt>
+                  <dd className="text-right">
+                    <a href={site.github} className="link-draw" target="_blank" rel="noreferrer">
+                      Profil
+                    </a>
+                  </dd>
+                </div>
+              )}
             </dl>
           </Reveal>
 

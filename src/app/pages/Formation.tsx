@@ -69,6 +69,12 @@ export function Formation() {
       {/* Certifications */}
       <section className="mx-auto max-w-[1400px] px-5 pt-24 sm:px-8 sm:pt-32">
         <SectionTitle aside="Attestations à déposer dans public/documents">Certifications</SectionTitle>
+        {formation.certifications.length === 0 ? (
+          <p className="mt-8 max-w-2xl rounded-card border border-line p-7 text-[15.5px] leading-relaxed text-muted">
+            Aucune certification n’est encore obtenue. Cette rubrique sera complétée avec les certifications et
+            attestations au fur et à mesure de la formation.
+          </p>
+        ) : (
         <ul className="mt-8 border-t border-line">
           {formation.certifications.map((certification) => {
             const done = certification.status === 'Obtenue'
@@ -94,6 +100,7 @@ export function Formation() {
             )
           })}
         </ul>
+        )}
         <p className="mt-6 max-w-2xl text-[14px] leading-relaxed text-muted">{formation.note}</p>
       </section>
 

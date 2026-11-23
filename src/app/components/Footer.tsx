@@ -36,10 +36,12 @@ export function Footer() {
               </a>
             </Reveal>
             <Reveal delay={0.2} className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[14.5px]">
-              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="link-draw inline-flex items-center gap-1.5">
-                LinkedIn
-                <ArrowUpRight className="size-3.5" />
-              </a>
+              {contact.linkedin && (
+                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="link-draw inline-flex items-center gap-1.5">
+                  LinkedIn
+                  <ArrowUpRight className="size-3.5" />
+                </a>
+              )}
               <a href={contact.github} target="_blank" rel="noreferrer" className="link-draw inline-flex items-center gap-1.5">
                 GitHub
                 <ArrowUpRight className="size-3.5" />

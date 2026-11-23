@@ -16,6 +16,12 @@ export function Competences() {
       />
 
       <section className="mx-auto max-w-[1400px] px-5 pt-16 sm:px-8 sm:pt-24">
+        {competenceMatrix.length === 0 ? (
+          <p className="max-w-2xl rounded-card border border-line p-7 text-[15.5px] leading-relaxed text-muted">
+            Le tableau de synthèse sera renseigné dès que les premières fiches de réalisation seront publiées :
+            chaque ligne reliera une réalisation aux compétences du référentiel qu’elle mobilise.
+          </p>
+        ) : (
         <div className="overflow-x-auto rounded-card border border-line">
           <table className="w-full min-w-[900px] border-collapse text-left text-[13.5px]">
             <caption className="sr-only">Réalisations et compétences mobilisées</caption>
@@ -74,10 +80,13 @@ export function Competences() {
             </tbody>
           </table>
         </div>
-        <p className="mt-4 flex items-center gap-2 text-[13px] text-muted">
-          <span className="inline-block size-2.5 rounded-full bg-accent" />
-          Compétence mobilisée par la réalisation
-        </p>
+        )}
+        {competenceMatrix.length > 0 && (
+          <p className="mt-4 flex items-center gap-2 text-[13px] text-muted">
+            <span className="inline-block size-2.5 rounded-full bg-accent" />
+            Compétence mobilisée par la réalisation
+          </p>
+        )}
       </section>
 
       <section className="mx-auto max-w-[1400px] px-5 pt-24 sm:px-8 sm:pt-32">
