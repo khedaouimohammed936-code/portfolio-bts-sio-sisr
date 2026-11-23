@@ -113,7 +113,7 @@ export function Home() {
       <section className="mx-auto max-w-[1400px] px-5 pt-24 sm:px-8 sm:pt-32">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <Reveal>
-            <Parallax src="/images/portrait.jpg" alt={site.name} className="aspect-[3/4] rounded-image" strength={6} />
+            <Parallax src={`${import.meta.env.BASE_URL}images/portrait.jpg`} alt={site.name} className="aspect-[3/4] rounded-image" strength={6} />
             <dl className="mt-6 grid gap-3 text-[14px]">
               <div className="flex justify-between gap-4 border-b border-line pb-3">
                 <dt className="text-muted">Statut</dt>

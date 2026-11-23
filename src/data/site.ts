@@ -3,6 +3,10 @@
 // à jour automatiquement. Les documents (CV, attestations, annexes) vont dans
 // public/documents, les images et captures dans public/images.
 
+// Les images suivent la base de build : racine sur Freebuff Sites,
+// sous /<depot>/ sur GitHub Pages.
+const image = (file: string) => `${import.meta.env.BASE_URL}images/${file}`
+
 export const site = {
   name: 'Votre Nom',
   title: 'Étudiant en BTS SIO — option SISR',
@@ -133,7 +137,7 @@ export const realisations: Realisation[] = [
     category: 'TP — Administration Windows',
     client: 'Travaux pratiques encadrés — BTS SIO',
     year: '2025',
-    cover: '/images/aurora.jpg',
+    cover: image('aurora.jpg'),
     tint: '#efe4d8',
     summary:
       'Mise en place d’un contrôleur de domaine Windows Server pour une maquette de 30 postes : comptes, groupes, stratégies de groupe et partages.',
@@ -190,8 +194,8 @@ export const realisations: Realisation[] = [
     ],
     competences: ['B1.1', 'B1.5', 'SISR-2', 'SISR-4'],
     images: [
-      { src: '/images/aurora.jpg', caption: 'Schéma de l’architecture du domaine (à remplacer par votre schéma).' },
-      { src: '/images/meridian.jpg', caption: 'Console « Utilisateurs et ordinateurs Active Directory » (à remplacer par votre capture).' },
+      { src: image('aurora.jpg'), caption: 'Schéma de l’architecture du domaine (à remplacer par votre schéma).' },
+      { src: image('meridian.jpg'), caption: 'Console « Utilisateurs et ordinateurs Active Directory » (à remplacer par votre capture).' },
     ],
     annexes: [
       { label: 'Documentation technique du TP (PDF)', href: '#', note: 'À déposer dans public/documents' },
@@ -205,7 +209,7 @@ export const realisations: Realisation[] = [
     category: 'Projet — Virtualisation',
     client: 'Projet de groupe — BTS SIO SISR',
     year: '2026',
-    cover: '/images/meridian.jpg',
+    cover: image('meridian.jpg'),
     tint: '#dbe0f5',
     summary:
       'Un hôte Proxmox VE hébergeant quatre machines Debian : serveur web, serveur de fichiers, DNS et pare-feu, avec sauvegardes planifiées.',
@@ -261,8 +265,8 @@ export const realisations: Realisation[] = [
     ],
     competences: ['B1.1', 'B1.4', 'SISR-1', 'SISR-2', 'SISR-4'],
     images: [
-      { src: '/images/meridian.jpg', caption: 'Schéma de l’infrastructure virtualisée (à remplacer par votre schéma).' },
-      { src: '/images/halcyon.jpg', caption: 'Interface Proxmox avec les conteneurs en fonctionnement (à remplacer par votre capture).' },
+      { src: image('meridian.jpg'), caption: 'Schéma de l’infrastructure virtualisée (à remplacer par votre schéma).' },
+      { src: image('halcyon.jpg'), caption: 'Interface Proxmox avec les conteneurs en fonctionnement (à remplacer par votre capture).' },
     ],
     annexes: [
       { label: 'Dossier de projet et plan d’adressage (PDF)', href: '#', note: 'À déposer dans public/documents' },
@@ -276,7 +280,7 @@ export const realisations: Realisation[] = [
     category: 'TP — Réseaux Cisco',
     client: 'Travaux pratiques — Packet Tracer',
     year: '2025',
-    cover: '/images/halcyon.jpg',
+    cover: image('halcyon.jpg'),
     tint: '#ebe3d6',
     summary:
       'Conception d’un réseau d’entreprise segmenté en quatre VLAN, avec routage inter-VLAN et listes de contrôle d’accès sur Packet Tracer.',
@@ -331,8 +335,8 @@ export const realisations: Realisation[] = [
     ],
     competences: ['B1.1', 'SISR-1', 'SISR-3'],
     images: [
-      { src: '/images/halcyon.jpg', caption: 'Topologie Packet Tracer (à remplacer par votre capture).' },
-      { src: '/images/fold.jpg', caption: 'Plan d’adressage et tableau des VLAN (à remplacer).' },
+      { src: image('halcyon.jpg'), caption: 'Topologie Packet Tracer (à remplacer par votre capture).' },
+      { src: image('fold.jpg'), caption: 'Plan d’adressage et tableau des VLAN (à remplacer).' },
     ],
     annexes: [
       { label: 'Configuration des équipements (texte)', href: '#', note: 'Fichier .txt à joindre' },
@@ -346,7 +350,7 @@ export const realisations: Realisation[] = [
     category: 'Stage — Supervision',
     client: 'Entreprise du stage',
     year: '2026',
-    cover: '/images/kite.jpg',
+    cover: image('kite.jpg'),
     tint: '#d9e6dc',
     summary:
       'Mise en place d’une supervision des serveurs et du réseau d’une PME, avec alertes par mail et tableau de bord pour l’équipe infrastructure.',
@@ -401,8 +405,8 @@ export const realisations: Realisation[] = [
     ],
     competences: ['B1.2', 'B1.5', 'SISR-3', 'SISR-4'],
     images: [
-      { src: '/images/kite.jpg', caption: 'Tableau de bord Zabbix (à remplacer par votre capture).' },
-      { src: '/images/nocturne.jpg', caption: 'Alerte reçue par mail lors d’un test (à remplacer).' },
+      { src: image('kite.jpg'), caption: 'Tableau de bord Zabbix (à remplacer par votre capture).' },
+      { src: image('nocturne.jpg'), caption: 'Alerte reçue par mail lors d’un test (à remplacer).' },
     ],
     annexes: [
       { label: 'Procédure d’installation Zabbix (PDF)', href: '#', note: 'À déposer dans public/documents' },
@@ -416,7 +420,7 @@ export const realisations: Realisation[] = [
     category: 'Stage — Administration de parc',
     client: 'Entreprise du stage',
     year: '2026',
-    cover: '/images/nocturne.jpg',
+    cover: image('nocturne.jpg'),
     tint: '#d8d4e4',
     summary:
       'Industrialisation du déploiement des postes Windows d’une PME : mises à jour centralisées, modèles de configuration et durcissement des sessions.',
@@ -470,8 +474,8 @@ export const realisations: Realisation[] = [
     ],
     competences: ['B1.1', 'B1.2', 'B1.5', 'SISR-2'],
     images: [
-      { src: '/images/nocturne.jpg', caption: 'Console WSUS et groupes de postes (à remplacer par votre capture).' },
-      { src: '/images/aurora.jpg', caption: 'Console de gestion des stratégies de groupe (à remplacer).' },
+      { src: image('nocturne.jpg'), caption: 'Console WSUS et groupes de postes (à remplacer par votre capture).' },
+      { src: image('aurora.jpg'), caption: 'Console de gestion des stratégies de groupe (à remplacer).' },
     ],
     annexes: [
       { label: 'Procédure de préparation de poste (PDF)', href: '#', note: 'Document anonymisé' },
@@ -485,7 +489,7 @@ export const realisations: Realisation[] = [
     category: 'Projet — Systèmes et sécurité',
     client: 'Projet personnel encadré',
     year: '2026',
-    cover: '/images/fold.jpg',
+    cover: image('fold.jpg'),
     tint: '#e8e2d6',
     summary:
       'Hébergement d’une application web sur Debian, derrière Nginx en reverse proxy, avec HTTPS, pare-feu et durcissement du serveur.',
@@ -540,8 +544,8 @@ export const realisations: Realisation[] = [
     ],
     competences: ['B1.3', 'B1.5', 'SISR-2', 'SISR-4'],
     images: [
-      { src: '/images/fold.jpg', caption: 'Schéma de l’architecture proxy / application (à remplacer).' },
-      { src: '/images/meridian.jpg', caption: 'Résultat du scan de ports (à remplacer par votre capture).' },
+      { src: image('fold.jpg'), caption: 'Schéma de l’architecture proxy / application (à remplacer).' },
+      { src: image('meridian.jpg'), caption: 'Résultat du scan de ports (à remplacer par votre capture).' },
     ],
     annexes: [
       { label: 'Configuration Nginx commentée', href: '#', note: 'Fichier .conf à joindre' },
